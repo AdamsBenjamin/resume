@@ -8,4 +8,8 @@ build:
 	$(TEX) $(TARGET)
 
 clean:
-	echo $(INT_FILES)
+	rm $(INT_FILES)
+
+wepl:
+	exec echo $(TARGET) | \
+		entr -pr $(MAKE) build &
